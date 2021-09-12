@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'apilaravel' => [
+        'client_id' => env('APILARAVEL_CLIENT_ID'),
+        'client_secret' => env('APILARAVEL_CLIENT_SECRET'),
+    ],
+
 ];
