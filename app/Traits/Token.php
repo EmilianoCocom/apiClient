@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 trait Token{
 
-    public function getAccessToken($user, $service)
+    public function setAccessToken($user, $service)
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json'
@@ -16,6 +16,7 @@ trait Token{
             'client_secret' => config('services.apilaravel.client_secret'),
             'username' => request('email'),
             'password' => request('password'),
+            'scopes' => 'create-post read-post update-post delete-post'
         ]);
 
         $access_token = $response->json();

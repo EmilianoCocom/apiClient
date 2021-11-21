@@ -23,6 +23,7 @@ class Controller extends BaseController
                 'refresh_token' => auth()->user()->accessToken->refresh_token,
                 'client_id' => config('services.apilaravel.client_id'),
                 'client_secret' => config('services.apilaravel.client_secret'),
+                'scopes' => 'create-post read-post update-post delete-post'
             ]);
         
             $access_token = $response->json();
